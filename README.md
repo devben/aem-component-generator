@@ -58,6 +58,7 @@ your component.
 - `title`: human readable component name, also used as the title for dialogs
 - `group`: component group
 - `type`: component folder type - content, form, structure
+- `resource-super-type`: component super type - container etc
 - `options.js`: whether to create an empty JS lib for the component (shared with CSS lib)
 - `options.jstxt`: whether to create the js.txt mapping file within the clientlib. Set to `false` when this file is not needed within your clientlib
 - `options.css`: whether to create an empty CSS lib for the component (shared with JS lib)

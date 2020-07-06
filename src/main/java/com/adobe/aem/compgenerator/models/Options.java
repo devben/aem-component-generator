@@ -28,6 +28,9 @@ public class Options implements BaseModel {
 
     private final static String[] DEFAULT_ADAPTABLES = new String[] { "request" };
 
+    @JsonProperty("container-component")
+    private boolean containerComponent;
+
     @JsonProperty("generic-javadoc")
     private boolean hasGenericJavadoc;
 
@@ -81,6 +84,14 @@ public class Options implements BaseModel {
 
     @JsonProperty("properties-global-tabs")
     private List<Tab> globalTabProperties;
+
+    public boolean isContainerComponent() {
+        return containerComponent;
+    }
+
+    public void setContainerComponent(boolean containerComponent) {
+        this.containerComponent = containerComponent;
+    }
 
     public boolean isHasGenericJavadoc() {
         return hasGenericJavadoc;

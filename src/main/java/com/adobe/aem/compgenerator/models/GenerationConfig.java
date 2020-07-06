@@ -37,6 +37,9 @@ public class GenerationConfig implements BaseModel {
     @JsonProperty("type")
     private String type;
 
+    @JsonProperty("resource-super-type")
+    private String resourceSuperType;
+
     @JsonProperty("project-settings")
     private ProjectSettings projectSettings;
 
@@ -88,6 +91,14 @@ public class GenerationConfig implements BaseModel {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getResourceSuperType() {
+        return resourceSuperType;
+    }
+
+    public void setResourceSuperType(String resourceSuperType) {
+        this.resourceSuperType = resourceSuperType;
     }
 
     public ProjectSettings getProjectSettings() {

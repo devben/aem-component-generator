@@ -150,6 +150,24 @@ public class ComponentUtils {
                 rootElement.setAttribute(Constants.JCR_PRIMARY_TYPE, folderType);
                 rootElement.setAttribute(Constants.PROPERTY_JCR_TITLE, generationConfig.getTitle());
                 rootElement.setAttribute("componentGroup", generationConfig.getGroup());
+                if (generationConfig.getOptions().isContainerComponent()) {
+                    rootElement.setAttribute(Constants.PROPERTY_CS_IS_CONTAINER, "true");
+
+                    Path containerElementFolderPath = CommonUtils.createFolder(path + "/new");
+                    Document containerElementDoc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+                    Element containerElement = XMLUtils.createRootElement(containerElementDoc, generationConfig);
+
+                    containerElement.setAttribute(Constants.JCR_PRIMARY_TYPE, folderType);
+                    containerElement.setAttribute(Constants.PROPERTY_JCR_TITLE, "New Paragraph - " + generationConfig.getTitle());
+                    containerElement.setAttribute(Constants.PROPERTY_SLING_RESOURCESUPERTYPE, Constants.RESOURCE_SUPERTYPE_NEWPARAGRAPH);
+                    containerElement.setAttribute("componentGroup", ".hidden");
+
+                    containerElementDoc.appendChild(containerElement);
+                    XMLUtils.transformDomToFile(containerElementDoc, containerElementFolderPath + "/" + Constants.FILENAME_CONTENT_XML);
+                }
+                if (generationConfig.getResourceSuperType() != null) {
+                    rootElement.setAttribute(Constants.PROPERTY_SLING_RESOURCESUPERTYPE, generationConfig.getResourceSuperType());
+                }
             } else if (folderType.equalsIgnoreCase(Constants.TYPE_SLING_FOLDER)) {
                 rootElement.setAttribute(Constants.JCR_PRIMARY_TYPE, folderType);
             } else if (folderType.equalsIgnoreCase(Constants.TYPE_CQ_CLIENTLIB_FOLDER)) {

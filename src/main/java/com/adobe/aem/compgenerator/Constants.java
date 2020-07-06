@@ -46,6 +46,8 @@ public class Constants {
     public static final String RESOURCE_TYPE_TEXTFIELD = "granite/ui/components/coral/foundation/form/textfield";
     public static final String RESOURCE_TYPE_CORAL_FIXEDCOLUMNS = "granite/ui/components/coral/foundation/fixedcolumns";
 
+    public static final String RESOURCE_SUPERTYPE_NEWPARAGRAPH = "wcm/foundation/components/parsys/newpar";
+
     public static final String TYPE_CHECKBOX = "checkbox";
     public static final String TYPE_DATEPICKER = "datepicker";
     public static final String TYPE_HEADING = "heading";
@@ -68,12 +70,14 @@ public class Constants {
 
     public static final String PROPERTY_JCR_TITLE = "jcr:title";
     public static final String PROPERTY_SLING_RESOURCETYPE = "sling:resourceType";
+    public static final String PROPERTY_SLING_RESOURCESUPERTYPE = "sling:resourceSuperType";
     public static final String PROPERTY_FIELDLABEL = "fieldLabel";
     public static final String PROPERTY_FIELDDESC = "fieldDescription";
     public static final String PROPERTY_NAME = "name";
     public static final String PROPERTY_TEXT = "text";
     public static final String PROPERTY_COMPOSITE = "composite";
     public static final String PROPERTY_CQ_MSM_LOCKABLE = "cq-msm-lockable";
+    public static final String PROPERTY_CS_IS_CONTAINER = "cq:isContainer";
 
     public static final String JCR_ROOT_NODE = "jcr:root";
     public static final String JCR_PRIMARY_TYPE = "jcr:primaryType";
@@ -82,6 +86,7 @@ public class Constants {
     public static final String TYPE_CQ_CLIENTLIB_FOLDER = "cq:ClientLibraryFolder";
     public static final String TYPE_CQ_COMPONENT = "cq:Component";
     public static final String TYPE_SLING_FOLDER = "sling:Folder";
+
 
     public static final String TEMPLATE_COPYRIGHT_CSS = "template-copyright-css.txt";
     public static final String TEMPLATE_COPYRIGHT_JAVA = "template-copyright.txt";
